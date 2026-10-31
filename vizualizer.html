@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sewing Pattern Visualizer</title>
+</head>
+<body>
+    <h1>Sewing Pattern Visualizer</h1>
+    <main>
+        <div id="controls">
+            <label for="units">select units:</label>
+            <select id="units">
+                <option value="in">yards, inches</option>
+                <option value="cm">meters, cm</option>
+            </select>
+            <label for="patternSelect">Select Pattern:</label>
+            <select id="patternSelect">
+                <option value="circle">Circle Skirt</option>
+            </select>
+            <br>
+            <div id="waistContainer">
+                <label for="waist">Waist Circumfrence</label>
+                <input type="number" min="0" id="waist">
+            </div>
+            <div id="lengthContainer">
+                <label for="length">Length</label>
+                <input type="number" min="0" id="length">
+            </div>
+            <div id="easeContainer">
+                <label for="ease">Ease</label>
+                <input type="number" min="0" id="ease">
+            </div>
+            <div id="ratioContainer">
+                <div>
+                    <label for="numerator">Numerator</label>
+                    <input type="number" min="1" id="numerator">
+                </div>
+                <div>
+                    <label for="denominator">Denominator</label>
+                    <input type="number" min="1" id="denominator">
+                </div>
+            </div>
+        </div>
+
+        <div id="canvasContainers">
+            <div id="patternContainer">
+                <div>
+                    <h3>Pattern Info</h3>
+                    <ul id="patternInfo"></ul>
+                </div>
+                <canvas id="patternCanvas" width="512" height="256"></canvas>
+            </div>
+            <div id="cuttingContainer">
+                <div>
+                    <h3>Cutting Info</h3>
+                    <ul id="cuttingInfo"></ul>
+                </div>
+                <canvas id="cuttingCanvas" width="512" height="256"></canvas>
+            </div>
+            <canvas id="finishedCanvas" width="256" height="256"></canvas>
+        </div>
+    </main>
+    <script src="vizualizer.js"></script>
+</body>
+</html>
